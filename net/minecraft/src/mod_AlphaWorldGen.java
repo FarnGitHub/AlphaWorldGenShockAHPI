@@ -37,7 +37,7 @@ public class mod_AlphaWorldGen extends BaseMod {
     }
 
     public boolean OnTickInGame(Minecraft minecraft) {
-        if(ConfigAlphaWorldGen.instance.wintermode()) {
+        if(ConfigAlphaWorldGen.instance.wintermode() && ConfigAlphaWorldGen.instance.alphaworldgen()) {
             minecraft.theWorld.prevRainingStrength = 0.3F;
             minecraft.theWorld.rainingStrength = 0.3F;
         }
