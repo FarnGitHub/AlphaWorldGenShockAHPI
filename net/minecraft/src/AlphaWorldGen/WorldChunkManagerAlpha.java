@@ -3,13 +3,11 @@ package net.minecraft.src.AlphaWorldGen;
 import net.minecraft.src.BiomeGenBase;
 import net.minecraft.src.ChunkCoordIntPair;
 import net.minecraft.src.WorldChunkManager;
+import net.minecraft.src.mod_AlphaWorldGen;
 
 import java.util.Arrays;
 
 public class WorldChunkManagerAlpha extends WorldChunkManager {
-
-    private BiomeGenBase plains = BiomeGenBase.plains;
-    private BiomeGenBase tundra = BiomeGenBase.tundra;
     private boolean winter = false;
 
     public WorldChunkManagerAlpha() {
@@ -17,11 +15,11 @@ public class WorldChunkManagerAlpha extends WorldChunkManager {
     }
 
     public BiomeGenBase getBiomeGenAtChunkCoord(ChunkCoordIntPair chunkCoordIntPair1) {
-        return this.winter ? this.tundra : this.plains;
+        return this.winter ?  mod_AlphaWorldGen.alphaWinter : mod_AlphaWorldGen.alphaBiome;
     }
 
     public BiomeGenBase getBiomeGenAt(int i1, int i2) {
-        return this.winter ? this.tundra : this.plains;
+        return this.winter ? mod_AlphaWorldGen.alphaWinter : mod_AlphaWorldGen.alphaBiome;
     }
 
     public double getTemperature(int i1, int i2) {
@@ -38,7 +36,7 @@ public class WorldChunkManagerAlpha extends WorldChunkManager {
             d1 = new double[i4 * i5];
         }
 
-        Arrays.fill(d1, 0, i4 * i5, this.winter ? 0.0D : 0.98D);
+        Arrays.fill(d1, 0, i4 * i5, this.winter ? 0.49D : 0.98D);
         return d1;
     }
 
@@ -52,9 +50,9 @@ public class WorldChunkManagerAlpha extends WorldChunkManager {
             this.humidity = new double[i4 * i5];
         }
 
-        Arrays.fill(biomeGenBase1, 0, i4 * i5, this.winter ? this.tundra: this.plains);
-        Arrays.fill(this.humidity, 0, i4 * i5, this.winter ? 0.0D : 0.44D);
-        Arrays.fill(this.temperature, 0, i4 * i5, this.winter ? 0.0D : 0.98D);
+        Arrays.fill(biomeGenBase1, 0, i4 * i5, this.winter ? mod_AlphaWorldGen.alphaWinter : mod_AlphaWorldGen.alphaBiome);
+        Arrays.fill(this.humidity, 0, i4 * i5, this.winter ? 0.19D : 0.44D);
+        Arrays.fill(this.temperature, 0, i4 * i5, this.winter ? 0.49D : 0.98D);
         return biomeGenBase1;
     }
 

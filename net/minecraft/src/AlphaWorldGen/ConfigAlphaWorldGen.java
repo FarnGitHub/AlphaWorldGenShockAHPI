@@ -22,6 +22,9 @@ public class ConfigAlphaWorldGen {
     public final HashMap<String, String> optionText = new HashMap<String, String>();
 
     private ConfigAlphaWorldGen() {
+    }
+
+    public void initOption() {
         cfgFile = new File(Minecraft.getMinecraftDir(), "alphaworldgn.cfg");
         this.addSetting("enabled", "Enabled", true);
         this.addSetting("winter", "Winter Mode", false);

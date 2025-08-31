@@ -1,7 +1,8 @@
 package net.minecraft.src.AlphaWorldGen;
 
-import net.minecraft.src.IChunkProvider;
-import net.minecraft.src.WorldProviderSurface;
+import net.minecraft.src.*;
+
+import java.util.Arrays;
 
 public class WorldProviderAlpha extends WorldProviderSurface {
 

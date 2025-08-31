@@ -1,6 +1,6 @@
 package net.minecraft.src.AlphaWorldGen;
 
-import net.minecraft.src.SettingBoolean;
+import net.minecraft.src.*;
 
 public class SettingBooleansAlphaWorldGen extends SettingBoolean {
     private String nameFarn = "nan";
